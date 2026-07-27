@@ -173,3 +173,41 @@ footer { max-width:1180px; padding:21px 30px; }
 @media (max-width:800px) { .research{box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}.thesis{padding-top:62px;padding-bottom:64px}.thesis > div{text-align:left}.thesis > div > p:last-child{margin:21px 0 0}.work-heading{margin-bottom:32px;text-align:left}.work-heading > p{margin-left:0}.about{padding-top:72px;padding-bottom:72px}.about-copy{grid-template-columns:1fr;gap:26px}.about-detail{max-width:none}.about-detail > p:first-child{margin-top:0}.blog{padding-top:70px;padding-bottom:70px}.blog-heading{align-items:start;flex-direction:column;gap:18px;margin-bottom:31px}.blog-grid{grid-template-columns:1fr}.blog-grid article,.blog-grid article:not(:first-child){min-height:0;padding:23px 0;border-right:0;border-bottom:1px solid var(--line)}.blog-grid h3{margin:16px 0 9px}.blog-grid a{margin-top:0;padding-top:16px} }
 @media (max-width:800px) { .metric-stamp{grid-template-columns:1fr}.metric-stamp strong{min-height:0;padding:16px 0}.metric-stamp strong + strong{border-left:0;border-top:1px solid #ffffff36;padding-left:0}.work-principle{grid-template-columns:1fr;gap:25px;margin-bottom:32px;padding:27px 22px}.work-principle ol{grid-template-columns:1fr;gap:0}.work-principle li{min-height:0;padding:16px 0 16px 13px;border-top:1px solid #aec2bc}.work-principle li p{margin:8px 0 0}.survey-complete{align-items:flex-start;flex-direction:column} }
 @media (max-width:800px) { .hero h1 span{white-space:normal}.hero-visual{width:100%;max-width:340px} }
+
+/* Color fields always run edge-to-edge; their content remains on the shared grid. */
+.advisory,
+.figure-band,
+.case-flow,
+.case-boundary,
+.case-close {
+  box-shadow: 0 0 0 100vmax var(--section-color, var(--soft));
+  clip-path: inset(0 -100vmax);
+}
+
+.advisory {
+  --section-color: #e4ece8;
+  padding-top: 112px;
+  padding-bottom: 112px;
+}
+.figure-band,
+.case-flow,
+.case-close { --section-color: var(--soft); }
+.case-boundary { --section-color: var(--ink); }
+
+@media (max-width:800px) {
+  .advisory { padding-top: 82px; padding-bottom: 82px; }
+
+  /* Keep the hero in one reading column; later desktop refinements otherwise
+     override the earlier mobile grid rule. */
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+    padding-top: 54px;
+    padding-bottom: 70px;
+  }
+
+  .hero-copy { padding-top: 0; }
+  .hero h1 { font-size: clamp(40px, 12vw, 48px); }
+  .hero-visual { width: 100%; max-width: 340px; justify-self: center; }
+  .metric-stamp strong { justify-content: flex-start; }
+}
