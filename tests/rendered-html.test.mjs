@@ -12,7 +12,7 @@ test("renders the public home page", async () => {
   const response = await render("/");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Connecting formulation development, experiments, and AI/i);
+  assert.match(html, /AI-enabled materials R(?:&amp;|&)D[\s\S]*Grounded in experiments/i);
   assert.match(html, /Google Scholar/i);
   assert.match(html, /AI-readiness check/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/i);

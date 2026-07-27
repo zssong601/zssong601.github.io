@@ -13,7 +13,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
   if (!item) notFound();
 
   return <main className="inner-page">
-    <header className="site-header"><a className="wordmark" href="/" aria-label="Song Zhang home">SONG <span>ZHANG</span></a><nav aria-label="Primary navigation"><a href="/work">Work</a><a href="/#insights">Insights</a><a href="/#research">Research</a><a href="/#about">About</a><a href="/#advisory">Advisory</a></nav><a className="header-cta" href="/#advisory">Start here <span>↗</span></a></header>
+    <header className="site-header"><a className="wordmark" href="/" aria-label="Song Zhang home">SONG <span>ZHANG</span></a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/#research">Research</a><a href="/insights">Blog</a><a href="/#advisory">Advisory</a></nav><a className="header-cta" href="/#advisory">Start here <span>↗</span></a></header>
     <article className="case-study">
       <section className="case-hero section-shell"><a className="back-link" href="/work">← All work</a><p className="eyebrow">{item.eyebrow}</p><span className="case-number">{item.number}</span><h1>{item.title}</h1><p className="case-subtitle">{item.subtitle}</p><p className="case-lede">{item.lead}</p></section>
       {item.slug === "automated-instrument-data-analysis" && <figure className="case-figure section-shell"><img src="/assets/automated-instrument-data-analysis-workflow.png" alt="Workflow from raw instrument output through method-specific analysis, scientist review, and an ML-ready dataset" width={2400} height={1350} /><figcaption>From raw instrument output to reviewable, ML-ready data. Method-specific automation remains visible to scientific review.</figcaption></figure>}
